@@ -1,0 +1,16 @@
+cn\itrip\pojo\ItripAreaDic.class
+cn\itrip\pojo\ItripHotelTradingArea.class
+cn\itrip\pojo\ItripHotelExtendProperty.class
+cn\itrip\pojo\ItripHotelTempStore.class
+cn\itrip\pojo\ItripUser.class
+cn\itrip\pojo\ItripHotelOrder.class
+cn\itrip\pojo\ItripLabelDic.class
+cn\itrip\pojo\ItripHotelRoom.class
+cn\itrip\pojo\ItripProductStore.class
+cn\itrip\pojo\ItripImage.class
+cn\itrip\pojo\ItripTradeEnds.class
+cn\itrip\pojo\ItripOrderLinkUser.class
+cn\itrip\pojo\ItripUserLinkUser.class
+cn\itrip\pojo\ItripComment.class
+cn\itrip\pojo\ItripHotel.class
+cn\itrip\pojo\ItripHotelFeature.class

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+         http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 加一个扫描，找到controller -->
+    <context:component-scan base-package="com.bdqn.controller" />
+	<!-- 	视图解析器 作用:把逻辑视图加上前后缀生成实际的物理路径
+	
+		/Book/list.jsp
+	-->			
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<!--&lt;!&ndash; 前缀叫 &ndash;&gt;-->
+			<property name="prefix" value="/"></property>
+			<!--&lt;!&ndash; 后缀叫 &ndash;&gt;-->
+			<property name="suffix" value=".jsp"></property>
+		</bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5000000"/>
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+
+
+
+	<!--&lt;!&ndash;  注解驱动  &ndash;&gt;-->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter" >
+				<property name = "supportedMediaTypes">
+					<list>
+						<value>application/json;charset=utf-8</value>
+						<value>text/html;charset=utf-8</value>
+						<value>text/plain;charset=utf-8</value>
+						<value>text/xml;charset=utf-8</value>
+					</list>
+				</property>
+			</bean>
+			<!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+			</bean>-->
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+</beans>
